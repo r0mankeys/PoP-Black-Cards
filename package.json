@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "nodemon server.js",
     "pretty": "npx prettier . --write",
-    "wind": "npx tailwindcss -i ./client/input.css -o ./client/output.css --watch"
+    "wind": "npx tailwindcss -i ./client/input.css -o ./client/output.css --watch",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
