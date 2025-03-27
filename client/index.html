@@ -6,8 +6,13 @@
     <link rel="stylesheet" href="output.css" />
     <link rel="icon" type="image/x-icon" href="./assets/logo.svg" />
     <style>
-      .box {
-        border: 2px dashed red; /* For visibility */
+      *,*::before,*::after {
+        box-sizing: border-box;
+      }
+      input, textarea, select, button, form {
+        -webkit-appearance: none;
+        appearance: none;
+        border: 1px solid #ccc; /* Add default border */
       }
       .input-container {
         padding: 1rem 1rem 1.5rem 1rem;
