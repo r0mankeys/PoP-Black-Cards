@@ -12,9 +12,28 @@
       .input-container {
         padding: 1rem 1rem 1.5rem 1rem;
       }
+      @supports (-webkit-backdrop-filter: blur(1px)) {
+        dialog {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 10;
+          border-radius: 10px;
+          width: 320px;
+        }
+        dialog#confirmationModal {
+          max-width: 450px;
+        }
+      }
       dialog::backdrop {
         background-color: rgba(0, 0, 0, 0.05);
         backdrop-filter: blur(2px);
+      }
+      @media (max-width: 600px) {
+        dialog {
+          width: 90%;
+        }
       }
     </style>
     <script type="module" src="./js/api.js"></script>
@@ -84,6 +103,7 @@
       </dialog>
       <!--Modal to ensure user information is true and correct-->
       <dialog
+        open
         id="confirmationModal"
         class="z-10 shadow-md rounded-lg min-w-60 max-w-108 mx-8 self-center justify-self-center"
       >
@@ -93,22 +113,23 @@
           </div>
           <p class="mt-4 text-xl font-black">Confirmation of form submition</p>
           <p class="mt-4">
-            Do you confirm that the information you have provided is both true and
-            correct before submitting?
+            Do you confirm that the information you have provided is both true
+            and correct before submitting?
           </p>
-             <div class="self-end mt-4">
-               <button
-               class="cursor-pointer confirm-modal-close-button"
-               >
-               <span class="inline-block text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">No</span>
-             </button>
-             <button
-                 id="confirmationModalYesButton"
-                 class="cursor-pointer"
-               >
-               <span class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Yes</span>
-               </button>
-              </div>
+          <div class="self-end mt-4">
+            <button class="cursor-pointer confirm-modal-close-button">
+              <span
+                class="inline-block text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                >No</span
+              >
+            </button>
+            <button id="confirmationModalYesButton" class="cursor-pointer">
+              <span
+                class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                >Yes</span
+              >
+            </button>
+          </div>
         </div>
       </dialog>
       <!--Data collection form-->

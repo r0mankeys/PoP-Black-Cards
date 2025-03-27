@@ -1,6 +1,6 @@
 import express from 'express'
 import DB from './db.js'
-import cors from 'cors';
+import cors from 'cors'
 import { doesUersExistInDB, addUserToDB } from './serverUtils.js'
 
 const APP = express()
@@ -18,7 +18,7 @@ APP.get('/', (request, response) => {
 APP.post('/checkuser', async (request, response) => {
   try {
     const { blackCardNumber, email } = request.body
-    const userExists = await doesUersExistInDB(DB, blackCardNumber, email);
+    const userExists = await doesUersExistInDB(DB, blackCardNumber, email)
     if (userExists) {
       return response.status(200).send('User already exists in DB')
     } else {
@@ -52,8 +52,8 @@ APP.post('/thankyou', async (request, response) => {
     if (userAdded) {
       response.redirect('/thankyou.html')
     }
-  } catch(error) {
-    console.error("Failed to add user to DB", error)
+  } catch (error) {
+    console.error('Failed to add user to DB', error)
     response.status(500).send(error.message)
   }
 })
