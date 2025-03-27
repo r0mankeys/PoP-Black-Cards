@@ -1,0 +1,26 @@
+{
+  "name": "prince_black_cards",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "pretty": "npx prettier . --write",
+    "wind": "npx tailwindcss -i ./client/input.css -o ./client/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.8",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.14.1",
+    "tailwindcss": "^4.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "prettier": "3.5.3"
+  }
+}
