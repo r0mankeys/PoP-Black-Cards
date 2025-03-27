@@ -12,11 +12,11 @@
       .input-container {
         padding: 1rem 1rem 1.5rem 1rem;
       }
-      @supports (-webkit-backdrop-filter: blur(1px)) {
+      /* @supports (-webkit-backdrop-filter: blur(1px)) {
         input, textarea, select, form {
           -webkit-appearance: none;
           appearance: none;
-          border: 1px solid #ccc; /* Add default border */
+          border: 1px solid #ccc; 
           border-radius: 10px;
         }
         dialog {
@@ -31,26 +31,15 @@
         dialog#confirmationModal {
           max-width: 450px;
         }
-      }
+      } */
       dialog::backdrop {
         background-color: rgba(0, 0, 0, 0.05);
         backdrop-filter: blur(2px);
-      }
-      input#firstName {
-        border: 1px solid #ccc;
-        border-radius: 7px;
       }
       @media (max-width: 600px) {
         dialog {
           width: 90%;
         }
-      }
-      button#submitBtn {
-        background-color: #323945;
-        color: white;
-        border-radius: 10px;
-        padding: 0.625rem 1.25rem;
-        cursor: pointer;
       }
     </style>
     <script type="module" src="./js/api.js"></script>
@@ -156,7 +145,7 @@
               type="text"
               name="first_name"
               id="firstName"
-              class="mt-2 p-2 w-full"
+              class="border border-slate-300 rounded-md mt-2 p-2 w-full"
               placeholder="John"
               required
             />
@@ -222,8 +211,8 @@
           </div>
           <div class="px-4 pb-2">
             <button
+              class="bg-slate-700 text-white rounded-md px-5 py-2.5 cursor-pointer"
               type="submit"
-              id="submitBtn"
             >
               <strong>Submit</strong>
             </button>
