@@ -1,5 +1,6 @@
 import express from 'express'
 import DB from './db.js'
+import cors from 'cors';
 import { doesUersExistInDB, addUserToDB } from './serverUtils.js'
 
 const APP = express()
@@ -8,6 +9,7 @@ const PORT = 3000
 APP.use(express.json())
 APP.use(express.static('client'))
 APP.use(express.static('client/assets'))
+APP.use(cors())
 
 APP.get('/', (request, response) => {
   response.sendStatus(200)
