@@ -38,7 +38,7 @@ const handleFormValidation = async event => {
     alertUnderAge(document.getElementById('dateOfBirth'), form)
     return
   } 
-  if (await checkUserExistsInDB(+blackCardNumber)) {
+  if (await checkUserExistsInDB(+blackCardNumber, document.getElementById('email').value)) {
     toggleModal(alreadyInModal, 'open')
     form.reset()
     return
