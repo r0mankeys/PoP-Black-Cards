@@ -1,7 +1,7 @@
-async function doesUersExistInDB(pool, blackCardNumber) {
+async function doesUersExistInDB(pool, blackCardNumber, email) {
   const query = await pool.query(
-    'SELECT * FROM black_card_users WHERE card_number = $1',
-    [blackCardNumber],
+    'SELECT * FROM black_card_users WHERE card_number = $1 OR email = $2',
+    [blackCardNumber, email],
   )
   return query && query.rows.length > 0
 }

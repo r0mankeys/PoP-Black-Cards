@@ -22,7 +22,7 @@ async function postFormData(formData) {
   }
 }
 
-async function checkUserExistsInDB(blackCardNumber) {
+async function checkUserExistsInDB(blackCardNumber, email) {
   try {
     const response = await fetch('/checkuser', {
       method: 'POST',
@@ -30,7 +30,7 @@ async function checkUserExistsInDB(blackCardNumber) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ blackCardNumber }),
+      body: JSON.stringify({ blackCardNumber, email }),
     })
     if (+response.status === 404) {
       return false

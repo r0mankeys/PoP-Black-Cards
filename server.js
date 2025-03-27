@@ -17,8 +17,8 @@ APP.get('/', (request, response) => {
 
 APP.post('/checkuser', async (request, response) => {
   try {
-    const { blackCardNumber } = request.body
-    const userExists = await doesUersExistInDB(DB, blackCardNumber)
+    const { blackCardNumber, email } = request.body
+    const userExists = await doesUersExistInDB(DB, blackCardNumber, email);
     if (userExists) {
       return response.status(200).send('User already exists in DB')
     } else {
