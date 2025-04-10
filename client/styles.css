@@ -244,6 +244,7 @@ input.blackCardInput {
 
 input.dobInput {
     padding: 0.25rem; 
+    border: 1px solid #ccc;
     border-radius: 0.375rem; 
     border-width: 1px; 
     text-align: center; 
@@ -264,8 +265,8 @@ input.dobInput {
  }
 
  input.card-number {
+    border: 1px solid #ccc;
     border-radius: 0.375rem; 
-    border-width: 1px; 
     width: 4rem; 
     text-align: center; 
     height: 34px;
@@ -282,3 +283,31 @@ input.dobInput {
     color: #ffffff; 
     cursor: pointer; 
  }
+
+ /* Thank you page */
+
+ main.thank-you-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+section.thank-you-container {
+    text-align: center;
+    border: 2px solid #3c3c3c;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    margin-inline: 1rem;
+}
+
+h1.thank-you-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+p.thank-you-text {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
